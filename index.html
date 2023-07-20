@@ -4,11 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/output.css">
-    <title>AudioTextSync</title>
+    <title>AudioTextSync | Sync Your Senses</title>
+    {/* <!-- Open Graph / Facebook --> */}
+    <meta
+      property="og:title"
+      content="AudioTextSync | Sync Your Senses"
+    />
+    <meta
+      property="og:description"
+      content="Seamlessly synchronize audio and text for a cohesive user experience."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://board-listed-saurav.vercel.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/die12ywpb/image/upload/v1689859510/1520197342961_fqt3d7.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://res.cloudinary.com/die12ywpb/image/upload/v1689859510/1520197342961_fqt3d7.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Steve Jobs the crazy ones"
+    />
+
+    {/* <!-- Twitter --> */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AudioTextSync | Sync Your Senses"
+    />
+    <meta
+      name="twitter:description"
+      content="Seamlessly synchronize audio and text for a cohesive user experience."
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/die12ywpb/image/upload/v1689859510/1520197342961_fqt3d7.jpg"
+    />
+    <meta
+      name="twitter:image:src"
+      content="https://res.cloudinary.com/die12ywpb/image/upload/v1689859510/1520197342961_fqt3d7.jpg"
+    />
+    <meta
+      name="twitter:url"
+      content="https://board-listed-saurav.vercel.app/"
+    />
+    <meta name="twitter:image:width" content="280" />
+    <meta name="twitter:image:height" content="480" />
+    <meta name="twitter:image:alt" content="AudioTextSync" />
 </head>
 <body class=" bg-black grid place-items-center h-screen text-white " >
-<audio class="player" src="https://yomeshgupta.com/crazy-ones-audio.mp3" controls></audio>
-<div class="lyrics max-w-5xl text-3xl  font-medium leading-relaxed "></div>
+<div class="w-full h-screen flex items-center justify-center flex-col  ">
+    <div class=" relative flex justify-center items-center">
+    <button id="playButton" class=" w-12 h-12 flex justify-center items-center  shadow-lg transition-opacity duration-300 absolute bg-gradient-to-r from-[#FF7F00]  to-[#FFD700] text-black font-bold rounded-full z-50  ">
+        <!-- Play -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+          </svg>
+    </button>
+    <audio id="audio" class=" player " src="https://res.cloudinary.com/die12ywpb/video/upload/v1689858420/crazy-ones-audio_d77pli.mp3"></audio>
+    <div class="lyrics p-8 xl:p-0 text-lg fo md:max-w-5xl md:text-3xl font-bold leading-relaxed md:leading-[1.5] select-none "></div>
+</div>
+<div class=" font-medium mt-10 text-gray-400 "><a href="https://themodernmonk7.framer.website/" target="_blank"> Made with 💞 by  SAurav 🌱 </a>   </div>
+</div>
     <script src="./script.js"></script>
 </body>
 </html>
