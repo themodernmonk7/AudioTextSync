@@ -590,6 +590,10 @@ span {
   margin-top: 2.5rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -720,6 +724,10 @@ span {
 }
 
 @media (min-width: 768px) {
+  .md\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .md\:max-w-5xl {
     max-width: 64rem;
   }
