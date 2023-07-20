@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./index.css -o ./dist/output.css",
-    "watch": "tailwindcss -i ./index.css -o ./dist/output.css --watch"
+    "buildTail": "tailwindcss -i ./index.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./index.css -o ./dist/output.css --watch",
+    "build": "set \"GENERATE_SOURCEMAP=false\" "
   },
   "keywords": [],
   "author": "",
