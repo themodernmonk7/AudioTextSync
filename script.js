@@ -165,38 +165,58 @@ const data = [
         "startTime": 52.49
       }
     ]
-const player = document.querySelector('.player');
-const lyrics = document.querySelector('.lyrics');
-// Create a map to associate each line with its corresponding start time
-const syncData = data.map(line => ({
-start: line.startTime,
-text: line.text
-}));
+    const playButton = document.getElementById("playButton")
+    const audio = document.getElementById("audio")
+    const player = document.querySelector(".player")
+    const lyrics = document.querySelector(".lyrics")
+    // Create a map to associate each line with its corresponding start time
+    const syncData = data.map((line) => ({
+      start: line.startTime,
+      text: line.text,
+    }))
 
-// Generate the <span> tag for each line and append it to the lyrics div
-syncData.forEach(item => {
-const spanTag = document.createElement('span');
-spanTag.innerText = item.text;
-lyrics.appendChild(spanTag);
-});
+    // Add click event listener to the play button
+    playButton.addEventListener("click", () => {
+      // Hide the play button
+      playButton.classList.add("hide")
 
-player.addEventListener('timeupdate', () => {
-// Get the current time of the audio player
-const currentTime = player.currentTime;
+      // Play the audio
+      audio.play()
+    })
 
-// Toggle the "active" class for each span tag based on the current time
-syncData.forEach((item, index) => {
-const spanTag = lyrics.children[index];
+    // Add event listener to reset the button when the audio finishes playing
+    audio.addEventListener("ended", () => {
+      playButton.classList.remove("hide")
+    })
 
-if (currentTime >= item.start && currentTime < item.start + item.text.length / 2) {
-  spanTag.classList.add('active');
-}
-});
-});
+    // Generate the <span> tag for each line and append it to the lyrics div
+    syncData.forEach((item) => {
+      const spanTag = document.createElement("span")
+      spanTag.innerText = item.text
+      lyrics.appendChild(spanTag)
+    })
 
-player.addEventListener('ended', () => {
-    syncData.forEach((item, index) => {
-      const spanTag = lyrics.children[index];
-      spanTag.classList.remove('active');
-    });
-  });
+    player.addEventListener("timeupdate", () => {
+      // Get the current time of the audio player
+      const currentTime = player.currentTime
+
+      // Toggle the "active" class for each span tag based on the current time
+      syncData.forEach((item, index) => {
+        const spanTag = lyrics.children[index]
+
+        if (
+          currentTime >= item.start &&
+          currentTime < item.start + item.text.length / 2
+        ) {
+          spanTag.classList.add("active")
+        }
+      })
+    })
+
+    player.addEventListener("ended", () => {
+      syncData.forEach((item, index) => {
+        const spanTag = lyrics.children[index]
+        spanTag.classList.remove("active")
+      })
+    })
+    document.addEventListener("contextmenu", (e) => e.preventDefault(), false)
