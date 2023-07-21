@@ -6,7 +6,7 @@
         @apply ml-[5px] opacity-10
     }
     .active {
-        @apply bg-clip-text opacity-100 text-transparent bg-gradient-to-r from-[#FF7F00] to-[#FFD700] animate-text transition-all duration-200 delay-75 ease-in
+        @apply bg-clip-text opacity-100 text-transparent bg-gradient-to-r from-[#FF7F00] to-[#FFD700] animate-text transition-all duration-200 ease-in
         }
         
         .hide {
